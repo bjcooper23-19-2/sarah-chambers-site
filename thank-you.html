@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank you - Sarah Chambers Tutoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FFF8EE;
+      --warm-white: #FFFDF9;
+      --sunshine: #FFD166;
+      --coral: #FF6B6B;
+      --mint: #A8DADC;
+      --text-dark: #2D2D2D;
+      --text-mid: #5A5A5A;
+      --text-light: #8A8A8A;
+      --radius-lg: 32px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: rgba(255,248,238,0.92);
+      border-bottom: 2px solid rgba(255,209,102,0.3);
+      padding: 0 5%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--sunshine);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 3px 8px rgba(255,209,102,0.4);
+    }
+
+    .nav-logo span {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1.1;
+    }
+
+    .nav-logo span em {
+      display: block;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 48px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    main::before,
+    main::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    main::before {
+      width: 220px;
+      height: 220px;
+      background: rgba(255,209,102,0.22);
+      top: 12%;
+      left: 8%;
+    }
+
+    main::after {
+      width: 180px;
+      height: 180px;
+      background: rgba(168,218,220,0.28);
+      right: 10%;
+      bottom: 14%;
+    }
+
+    .thank-you-card {
+      width: min(620px, 100%);
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 44px;
+      text-align: center;
+      box-shadow: 0 18px 50px rgba(45,45,45,0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    p {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+
+    .home-button {
+      display: inline-block;
+      background: var(--coral);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+      transition: all 0.25s;
+    }
+
+    .home-button:hover {
+      background: #ff4f4f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+    }
+
+    @media (max-width: 640px) {
+      .thank-you-card {
+        padding: 34px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="https://www.sarahchambers-tutoring.co.uk/" class="nav-logo" aria-label="Sarah Chambers Tutoring home">
+      <div class="logo-icon">✏️</div>
+      <span>Sarah Chambers<em>Tutoring</em></span>
+    </a>
+  </nav>
+
+  <main>
+    <section class="thank-you-card">
+      <h1>Thank you, your message has been sent.</h1>
+      <p>Sarah will be in touch soon.</p>
+      <a class="home-button" href="https://www.sarahchambers-tutoring.co.uk/">Back to homepage</a>
+    </section>
+  </main>
+</body>
+</html>
