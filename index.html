@@ -665,95 +665,6 @@
     .sc5 { border-top: 4px solid var(--green); }
     .sc6 { border-top: 4px solid var(--sky); }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials {
-      background: white;
-    }
-
-    .testimonials-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .testimonial-card {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 28px;
-      position: relative;
-      transition: transform 0.2s;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: 16px; right: 20px;
-      font-family: 'Fraunces', serif;
-      font-size: 5rem;
-      line-height: 1;
-      color: rgba(0,0,0,0.06);
-      font-style: italic;
-    }
-
-    .stars {
-      color: var(--sunshine);
-      font-size: 1rem;
-      margin-bottom: 12px;
-      letter-spacing: 2px;
-    }
-
-    .testimonial-card blockquote {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: var(--text-mid);
-      font-weight: 600;
-      margin-bottom: 18px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .author-avatar {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .author-avatar svg { width: 20px; height: 20px; }
-
-    .aa1 { background: rgba(255,209,102,0.3); }
-    .aa2 { background: rgba(168,218,220,0.3); }
-    .aa3 { background: rgba(255,107,107,0.15); }
-
-    .author-info strong {
-      display: block;
-      font-weight: 800;
-      font-size: 0.88rem;
-    }
-
-    .author-info span {
-      font-size: 0.78rem;
-      color: var(--text-light);
-      font-weight: 600;
-    }
-
     /* ── HOW IT WORKS ── */
     .how-it-works {
       background: var(--cream);
@@ -1444,7 +1355,7 @@
           <div class="sen-point reveal">
             <div class="sen-point-dot"></div>
             <div>
-              <strong>Patience is my superpower</strong>
+              <strong>Celebrating every small step</strong>
               <p>I never rush and never compare. Every small step forward matters, and I make sure every child knows just how far they've come.</p>
             </div>
           </div>
@@ -1566,65 +1477,6 @@
       </div>
     </div>
   </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials" id="testimonials">
-    <div class="testimonials-header">
-      <div>
-        <div class="section-label reveal">Parent Stories</div>
-        <h2 class="reveal">What families say</h2>
-      </div>
-      <div class="reveal" style="display:flex; gap:6px; align-items:center;">
-        <div style="font-family:'Fraunces',serif; font-size:2.8rem; font-weight:700; color:var(--sunshine);">5.0</div>
-        <div>
-          <div style="color:var(--sunshine); font-size:0.9rem; letter-spacing:3px;">★★★★★</div>
-          <div style="font-size:0.78rem; color:var(--text-light); font-weight:600;">Average rating</div>
-        </div>
-      </div>
-    </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"My daughter has dyslexia and had really lost confidence in herself at school. After just a few sessions, she was coming home smiling. The patience and kindness she's shown is just wonderful."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar aa1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b08000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="author-info">
-            <strong>Sarah M.</strong>
-            <span>Parent of a Year 3 pupil</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"My son has ADHD and struggled to engage in traditional tutoring. Sessions here are tailored perfectly to how he learns: engaging, varied, and never overwhelming. His confidence has come on leaps and bounds."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar aa2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#2a7a7c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="author-info">
-            <strong>James &amp; Laura T.</strong>
-            <span>Parents of a Year 5 pupil</span>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
-        <blockquote>"My daughter had become really anxious about learning at home, but these sessions made such a difference. She feels calmer, more confident and much more willing to try."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar aa3">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#cc4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-          </div>
-          <div class="author-info">
-            <strong>Priya K.</strong>
-            <span>Parent of a Year 6 pupil</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
   <!-- SEND FAMILY SUPPORT -->
   <section class="send-support" id="send-support">
@@ -1891,7 +1743,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Stagger cards within sections
-    document.querySelectorAll('.approach-cards .reveal, .steps-grid .reveal, .subjects-grid .reveal, .testimonials-grid .reveal').forEach((el, i) => {
+    document.querySelectorAll('.approach-cards .reveal, .steps-grid .reveal, .subjects-grid .reveal').forEach((el, i) => {
       el.style.transitionDelay = `${i * 80}ms`;
     });
 
