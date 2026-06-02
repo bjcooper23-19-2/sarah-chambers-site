@@ -758,9 +758,17 @@
     }
     .contact-item .ci-icon svg { width: 20px; height: 20px; }
 
+    .contact-item a {
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover { color: var(--coral); }
+
     .ci1 .ci-icon { background: rgba(255,209,102,0.2); }
     .ci2 .ci-icon { background: rgba(168,218,220,0.2); }
     .ci3 .ci-icon { background: rgba(212,184,224,0.2); }
+    .ci4 .ci-icon { background: rgba(66,103,178,0.12); }
 
     /* Form */
     .contact-form {
@@ -1141,85 +1149,108 @@
       background: white;
     }
 
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    .pricing-table-wrap {
       margin-top: 40px;
-    }
-
-    .pricing-card {
-      background: var(--cream);
+      overflow-x: auto;
       border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
 
-    .pricing-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    .pricing-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      background: var(--cream);
     }
 
-    .pricing-card-featured {
-      background: white;
-      border: 3px solid var(--coral);
-      box-shadow: 0 8px 32px rgba(255,107,107,0.15);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: -14px; left: 50%; transform: translateX(-50%);
-      background: var(--coral);
-      color: white;
+    .pricing-table caption {
+      text-align: left;
+      padding: 18px 22px;
       font-weight: 800;
-      font-size: 0.75rem;
-      padding: 5px 16px;
-      border-radius: 50px;
-      white-space: nowrap;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .pricing-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
+      color: var(--text-mid);
       background: white;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
     }
 
-    .pricing-card-featured .pricing-icon { background: rgba(255,107,107,0.08); }
-
-    .pricing-icon svg { width: 24px; height: 24px; }
-
-    .pricing-duration {
-      font-weight: 800;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
+    .pricing-table th,
+    .pricing-table td {
+      padding: 18px 20px;
+      text-align: left;
+      border-bottom: 2px solid rgba(0,0,0,0.06);
+      vertical-align: top;
     }
 
-    .pricing-price {
-      font-family: 'Fraunces', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
+    .pricing-table thead th {
+      background: var(--sunshine);
       color: var(--text-dark);
-      line-height: 1;
-      margin-bottom: 14px;
+      font-size: 0.9rem;
+      font-weight: 900;
     }
 
-    .pricing-card-featured .pricing-price { color: var(--coral); }
+    .pricing-table tbody th {
+      background: rgba(255,255,255,0.45);
+      color: var(--text-dark);
+      font-weight: 800;
+    }
 
-    .pricing-desc {
-      font-size: 0.85rem;
+    .pricing-table td strong {
+      display: block;
+      color: var(--text-dark);
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .pricing-table td span {
+      color: var(--text-mid);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .parent-feedback-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .parent-feedback-card {
+      background: var(--cream);
+      border: 2px solid rgba(168,218,220,0.35);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+    }
+
+    .parent-feedback-card blockquote {
       color: var(--text-mid);
       font-weight: 600;
-      line-height: 1.6;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .parent-feedback-card figcaption {
+      color: var(--text-dark);
+      font-weight: 900;
+    }
+
+    @media (max-width: 640px) {
+      .pricing-table-wrap {
+        margin-left: -5%;
+        margin-right: -5%;
+        border-radius: 0;
+      }
+
+      .pricing-table {
+        min-width: 620px;
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        padding: 14px 16px;
+      }
+
+      .parent-feedback-card {
+        padding: 24px;
+      }
     }
   </style>
 </head>
@@ -1349,7 +1380,7 @@
             <div class="sen-point-dot"></div>
             <div>
               <strong>Truly adapted teaching</strong>
-              <p>I flex my approach to suit how your child learns best: visual, kinaesthetic, multi-sensory. Whatever works for them is what I use.</p>
+              <p>I adapt my approach to suit how your child learns best: visual, kinaesthetic, multi-sensory. Whatever works for them is what I use.</p>
             </div>
           </div>
           <div class="sen-point reveal">
@@ -1515,32 +1546,40 @@
       <h2 class="reveal">Simple, clear session rates</h2>
       <p class="section-intro reveal" style="margin:0 auto;">No hidden fees, no lengthy contracts. Just honest, flexible tutoring that fits your family.</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card reveal">
-        <div class="pricing-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#b08000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <div class="pricing-duration">40 min session</div>
-        <div class="pricing-price">£35</div>
-        <p class="pricing-desc">A focused shorter session, ideal for younger children or targeted work on one skill.</p>
-      </div>
-      <div class="pricing-card pricing-card-featured reveal">
-        <div class="pricing-badge">Most popular</div>
-        <div class="pricing-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#cc4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <div class="pricing-duration">60 min session</div>
-        <div class="pricing-price">£50</div>
-        <p class="pricing-desc">A full session covering one subject in depth, or a bespoke combination tailored to your child.</p>
-      </div>
-      <div class="pricing-card reveal">
-        <div class="pricing-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#6a4a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="pricing-duration">SEND Family Support</div>
-        <div class="pricing-price">from £80</div>
-        <p class="pricing-desc">EHCP support (£125) and 1-hour family coaching sessions to help you navigate the SEND system with confidence (£80).</p>
-      </div>
+    <div class="pricing-table-wrap reveal">
+      <table class="pricing-table">
+        <caption>Primary tutoring lesson prices</caption>
+        <thead>
+          <tr>
+            <th scope="col">Lessons per Week</th>
+            <th scope="col">40-Minute Sessions</th>
+            <th scope="col">60-Minute Sessions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1 Session / week</th>
+            <td><strong>£27.00 per session</strong><span>Total: £27.00/week</span></td>
+            <td><strong>£40.00 per session</strong><span>Total: £40.00/week</span></td>
+          </tr>
+          <tr>
+            <th scope="row">2 Sessions / week</th>
+            <td><strong>£25.65 per session</strong><span>Total: £51.30/week</span></td>
+            <td><strong>£36.00 per session</strong><span>Total: £72.00/week</span></td>
+          </tr>
+          <tr>
+            <th scope="row">3 Sessions / week</th>
+            <td><strong>£22.95 per session</strong><span>Total: £68.85/week</span></td>
+            <td><strong>£34.00 per session</strong><span>Total: £102.00/week</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="parent-feedback-list reveal" aria-label="Parent feedback">
+      <figure class="parent-feedback-card">
+        <blockquote>“Sarah has been absolutely fantastic supporting my daughter through her exams, particularly with maths. Before starting she was nervous and overwhelmed and lacked confidence. Sarah was patient, encouraging and explained things in a way that really built her confidence and understanding. We have seen a positive change and she now feels much more confident and willing to tackle questions. I would highly recommend Sarah for anyone looking for a supportive and effective tutor.”</blockquote>
+        <figcaption>Kelly Blackmore-Lee</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1616,6 +1655,15 @@
             Sessions in Wickham, Hampshire<br>
             <small style="font-weight:600;color:var(--text-light);">Online sessions also available</small>
           </span>
+        </div>
+
+        <div class="contact-item ci4">
+          <div class="ci-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4267B2" aria-hidden="true" focusable="false">
+              <path d="M14 8.5V6.8c0-.8.2-1.2 1.3-1.2H17V2.3c-.8-.1-1.6-.2-2.4-.2-2.4 0-4.1 1.5-4.1 4.2v2.2H7.8V12h2.7v9.9H14V12h2.7l.4-3.5H14z"/>
+            </svg>
+          </div>
+          <a href="https://www.facebook.com/profile.php?id=61566058814533" target="_blank" rel="noopener noreferrer" aria-label="Follow Sarah Chambers Tutoring on Facebook">Follow on Facebook</a>
         </div>
       </div>
     </div>
