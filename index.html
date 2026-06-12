@@ -1149,65 +1149,67 @@
       background: white;
     }
 
-    .pricing-table-wrap {
+    .pricing-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
       margin-top: 40px;
-      overflow-x: auto;
-      border-radius: var(--radius-lg);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
 
-    .pricing-table {
-      width: 100%;
-      min-width: 680px;
-      border-collapse: collapse;
+    .pricing-option-card {
       background: var(--cream);
+      border: 2px solid rgba(168,218,220,0.35);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.05);
     }
 
-    .pricing-table caption {
-      text-align: left;
-      padding: 18px 22px;
-      font-weight: 800;
-      color: var(--text-mid);
-      background: white;
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-      padding: 18px 20px;
-      text-align: left;
-      border-bottom: 2px solid rgba(0,0,0,0.06);
-      vertical-align: top;
-    }
-
-    .pricing-table thead th {
-      background: var(--sunshine);
+    .pricing-option-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
       color: var(--text-dark);
-      font-size: 0.9rem;
-      font-weight: 900;
     }
 
-    .pricing-table tbody th {
-      background: rgba(255,255,255,0.45);
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 2px solid rgba(0,0,0,0.06);
+    }
+
+    .pricing-row:first-of-type { border-top: 0; padding-top: 0; }
+    .pricing-row:last-of-type { padding-bottom: 0; }
+
+    .pricing-row-label {
       color: var(--text-dark);
       font-weight: 800;
     }
 
-    .pricing-table td strong {
+    .pricing-row-price {
+      text-align: right;
+    }
+
+    .pricing-row-price strong {
       display: block;
       color: var(--text-dark);
       font-weight: 900;
-      margin-bottom: 4px;
     }
 
-    .pricing-table td span {
+    .pricing-row-price span {
+      display: block;
       color: var(--text-mid);
-      font-weight: 700;
       font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 4px;
     }
 
     .parent-feedback-list {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
       margin-top: 28px;
     }
 
@@ -1232,24 +1234,26 @@
       font-weight: 900;
     }
 
-    @media (max-width: 640px) {
-      .pricing-table-wrap {
-        margin-left: -5%;
-        margin-right: -5%;
-        border-radius: 0;
+    @media (max-width: 760px) {
+      .pricing-options,
+      .parent-feedback-list {
+        grid-template-columns: 1fr;
       }
+    }
 
-      .pricing-table {
-        min-width: 620px;
-      }
-
-      .pricing-table th,
-      .pricing-table td {
-        padding: 14px 16px;
-      }
-
+    @media (max-width: 520px) {
+      .pricing-option-card,
       .parent-feedback-card {
         padding: 24px;
+      }
+
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .pricing-row-price {
+        text-align: left;
       }
     }
   </style>
@@ -1543,42 +1547,49 @@
   <section class="pricing" id="pricing">
     <div style="text-align:center; max-width:560px; margin:0 auto 0;">
       <div class="section-label reveal" style="justify-content:center;">Transparent Pricing</div>
-      <h2 class="reveal">Simple, clear session rates</h2>
-      <p class="section-intro reveal" style="margin:0 auto;">No hidden fees, no lengthy contracts. Just honest, flexible tutoring that fits your family.</p>
+      <h2 class="reveal">Tutoring Prices</h2>
+      <p class="section-intro reveal" style="margin:0 auto;">Bespoke 1-to-1 educational support packages</p>
     </div>
-    <div class="pricing-table-wrap reveal">
-      <table class="pricing-table">
-        <caption>Primary tutoring lesson prices</caption>
-        <thead>
-          <tr>
-            <th scope="col">Lessons per Week</th>
-            <th scope="col">40-Minute Sessions</th>
-            <th scope="col">60-Minute Sessions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1 Session / week</th>
-            <td><strong>£27.00 per session</strong><span>Total: £27.00/week</span></td>
-            <td><strong>£40.00 per session</strong><span>Total: £40.00/week</span></td>
-          </tr>
-          <tr>
-            <th scope="row">2 Sessions / week</th>
-            <td><strong>£25.65 per session</strong><span>Total: £51.30/week</span></td>
-            <td><strong>£36.00 per session</strong><span>Total: £72.00/week</span></td>
-          </tr>
-          <tr>
-            <th scope="row">3 Sessions / week</th>
-            <td><strong>£22.95 per session</strong><span>Total: £68.85/week</span></td>
-            <td><strong>£34.00 per session</strong><span>Total: £102.00/week</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="pricing-options reveal" aria-label="Tutoring prices">
+      <section class="pricing-option-card" aria-labelledby="pricing-60">
+        <h3 id="pricing-60">60-Minute Sessions</h3>
+        <div class="pricing-row">
+          <div class="pricing-row-label">1 Session / week</div>
+          <div class="pricing-row-price"><strong>£40.00 per session</strong><span>Total: £40.00 / week</span></div>
+        </div>
+        <div class="pricing-row">
+          <div class="pricing-row-label">2 Sessions / week</div>
+          <div class="pricing-row-price"><strong>£36.00 per session</strong><span>Total: £72.00 / week</span></div>
+        </div>
+        <div class="pricing-row">
+          <div class="pricing-row-label">3 Sessions / week</div>
+          <div class="pricing-row-price"><strong>£34.00 per session</strong><span>Total: £102.00 / week</span></div>
+        </div>
+      </section>
+      <section class="pricing-option-card" aria-labelledby="pricing-40">
+        <h3 id="pricing-40">40-Minute Sessions</h3>
+        <div class="pricing-row">
+          <div class="pricing-row-label">1 Session / week</div>
+          <div class="pricing-row-price"><strong>£27.00 per session</strong><span>Total: £27.00 / week</span></div>
+        </div>
+        <div class="pricing-row">
+          <div class="pricing-row-label">2 Sessions / week</div>
+          <div class="pricing-row-price"><strong>£25.65 per session</strong><span>Total: £51.30 / week</span></div>
+        </div>
+        <div class="pricing-row">
+          <div class="pricing-row-label">3 Sessions / week</div>
+          <div class="pricing-row-price"><strong>£22.95 per session</strong><span>Total: £68.85 / week</span></div>
+        </div>
+      </section>
     </div>
     <div class="parent-feedback-list reveal" aria-label="Parent feedback">
       <figure class="parent-feedback-card">
         <blockquote>“Sarah has been absolutely fantastic supporting my daughter through her exams, particularly with maths. Before starting she was nervous and overwhelmed and lacked confidence. Sarah was patient, encouraging and explained things in a way that really built her confidence and understanding. We have seen a positive change and she now feels much more confident and willing to tackle questions. I would highly recommend Sarah for anyone looking for a supportive and effective tutor.”</blockquote>
         <figcaption>Kelly Blackmore-Lee</figcaption>
+      </figure>
+      <figure class="parent-feedback-card">
+        <blockquote>“I can’t recommend Sarah highly enough. Over the last few months, she has provided incredible support for my daughter and the difference has been remarkable. Not only has my daughter’s confidence grown significantly, but she felt genuinely positive and confident about her SATs. Sarah is kind, patient, and truly goes above and beyond. We are so grateful and would wholeheartedly recommend her to any family!”</blockquote>
+        <figcaption>Parent of Year 6 child for SATs tutoring</figcaption>
       </figure>
     </div>
   </section>
